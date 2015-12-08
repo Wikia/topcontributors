@@ -15,7 +15,7 @@
 class TopContributors {
     /**
      * Hook callback
-     *
+     *d
      * @param string $input
      * @param array $args
      * @param Parser $parser

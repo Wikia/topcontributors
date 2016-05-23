@@ -1,0 +1,26 @@
+{
+	"name": "Top Contributors",
+	"version": "1.0",
+	"author": [
+		"Rob Church",
+		"Cameron Chunn",
+		"Curse Wiki Team"
+	],
+	"descriptionmsg": "topcontributors_description",
+	"type": "parserhook",
+	"MessagesDirs": {
+		"TopContributors": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"TopContributors": "classes/TopContributors.php",
+		"TopContributorsHooks": "TopContributors.hooks.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"TopContributorsHooks::onParserFirstCallInit"
+		]
+	},
+	"manifest_version": 1
+}

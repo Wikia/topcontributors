@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": ["Cameron Chunn"]
+	},
+	"topcontributors": "Top Contributors",
+	"action-topcontributors": "perform Top Contributors actions",
+	"topcontributors_description": "Parser hook extension adds a <nowiki><topcontributors /></nowiki> tag to the parser, giving a list of the ten most active users on a wiki"
+}

@@ -1,14 +1,11 @@
 <?php
 /**
- * Curse Inc.
  * Top Contributors
  * Parser hook extension adds a <topcontributors /> tag to the parser, giving a list of the ten most active users on a wiki
  *
- * @author		Cameron Chunn
- * @copyright	(c) 2015 Curse Inc.
- * @license		All Rights Reserved
+ * @license		GNU General Public License v2.0 or later
  * @package		TopContributors
- * @link		http://www.curse.com/
+ * @link		https://gitlab.com/hydrawiki
  *
 **/
 

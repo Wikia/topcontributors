@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rail"
+		]
+	},
+	"topcontributors": "Najaktywniejsi edytorzy",
+	"action-topcontributors": "wykonywania akcji związanych z najaktywniejszymi edytorami",
+	"topcontributors_description": "Rozszerzenie funkcji parsera, dodające tag <code><nowiki><topcontributors /></nowiki></code>, wyświetlający listę najaktywniejszych użytkowników na wiki"
+}

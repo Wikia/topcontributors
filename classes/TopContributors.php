@@ -11,16 +11,25 @@ class TopContributors {
 	 */
 	public static function ParserHook($input, $args, $parser) {
 		$dbr = wfGetDB(DB_SLAVE);
+		if (class_exists(\ActorMigration::class)) {
+			$actorQuery = \ActorMigration::newMigration()->getJoin('rev_user');
+			$userTextField = $actorQuery['fields']['rev_user_text'];
+		} else {
+			$actorQuery = ['tables' => [], 'fields' => ['rev_user', 'rev_user_text'], 'joins' => []];
+			$userTextField = 'rev_user_text';
+		}
+
 		$res = $dbr->select(
-			'revision',
-			['rev_user', 'rev_user_text', 'COUNT(*) AS `count`'],
+			['revision'] + $actorQuery['tables'],
+			['COUNT(*) AS `count`'] + $actorQuery['fields'],
 			[],
 			__METHOD__,
 			[
-				'GROUP BY' => 'rev_user_text',
+				'GROUP BY' => $userTextField,
 				'ORDER BY' => 'count DESC',
 				'LIMIT' => '10',
-			]
+			],
+			$actorQuery['joins']
 		);
 		if ($res && $dbr->numRows($res) > 0) {
 			$out = '<div class="mw-top-contributors"><ul>';
